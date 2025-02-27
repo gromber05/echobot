@@ -2,36 +2,73 @@ import discord
 import dotenv
 import os
 from discord.ext import commands
+from groq import Groq
 
 intents = discord.Intents.default()
 intents.message_content = True
 
-os.system("cls" if os.name == "nt" else "clear")
-
 bot = commands.Bot(command_prefix='?', intents=intents)
 
-listaMensajes = list()
+dotenv.load_dotenv("project/token.env")
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 @bot.event
 async def on_ready():
-    print(f'✅ Bot conectado como {bot.user.name}')
+    print(f'Bot conectado como {bot.user.name}')
     await bot.change_presence(activity=discord.Game(name="Working on..."))
 
-@commands.Cog.listener()
-async def on_message(self, message:discord.Message):
-    listaMensajes.append(message)
-    print("\n" + message)
+client = Groq(
+    api_key=os.environ.get("GROQ_API_KEY"),
+)
 
+@bot.command()
+async def test(ctx, arg):
+    await ctx.send(arg)
 
-@commands.Cog.listener()
-async def on_error(self, event:str, *args, **kwargs):
-    await print("Error, comando no encontrado")
+@bot.command()
+async def parafrasea(ctx, *args):
+
+  texto_original = " ".join(args)  
+
+  chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "Parafrasea el siguiente texto: "
+            },
+            {
+                "role": "user",
+                "content": texto_original,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+  texto_parafraseado = chat_completion.choices[0].message.content
+  await ctx.reply(f"📝 **Texto parafraseado:** {texto_parafraseado}")
+
+@bot.command()
+async def traduce(ctx, *args):
+
+  texto_original = " ".join(args)  
+
+  chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "Traduceme el siguiente texto al español: "
+            },
+            {
+                "role": "user",
+                "content": texto_original,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+  texto_traducido = chat_completion.choices[0].message.content
+  await ctx.reply(f"📝 **Texto traducido:** {texto_traducido}")
 
 # Parte de tokens
 
-dotenv.load_dotenv("project/token.env")
-
-OPENAI_API_TOKEN = os.getenv("OPENAI_TOKEN")
-
-TOKEN = os.getenv("DISCORD_TOKEN")
 bot.run(TOKEN)
