@@ -71,5 +71,5 @@ Si el bot no se ejecuta correctamente en Windows, intenta ejecutar el terminal c
 - Revisa los logs en la consola para posibles errores.
 
 ## 📝 Licencia
-Este proyecto está bajo la licencia MIT. ¡Siéntete libre de modificarlo y mejorarlo! 🚀
+Este proyecto está bajo la licencia MIT. 
 
