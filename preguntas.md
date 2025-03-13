@@ -51,23 +51,22 @@ Podría mejorar la eficiencia de escritores buscando otras maneras de escribir a
 - Podría mejorar los procesos concretando más los "prompts" de las búsquedas y/o buscando otras maneras de optimizar las peticiones que se le realizan al modelo de lenguaje.
 
 ### Si tu proyecto no aplica directamente a negocio o planta, ¿qué otros entornos podrían beneficiarse?
-Podrían 
+Podrían beneficiarse personas del sector de la informática usando el bot con futuras actualizaciones que implementaran funciones mejoradas con el uso de la IA.
 
 ---
 
 ## Mejoras en IT y OT (2f)
 
 ### ¿Cómo puede tu software facilitar la integración entre entornos IT y OT?
-- Mediante **APIs y protocolos estándar** para comunicación entre sistemas.
-- Implementando **IIoT** (Internet Industrial de las Cosas) para conectar dispositivos industriales con sistemas IT.
+- Mediante **APIs** para comunicación entre sistemas.
+- Implementando **IoT** (Internet de las Cosas) para conectar dispositivos industriales con sistemas IT, como por ejemplo, conectarlo a unos sensores y, pedirle al bot que me resuma los datos y los analice para poder ver que está fallando en la cadena de producción.
 
 ### ¿Qué procesos específicos podrían beneficiarse de tu solución en términos de automatización o eficiencia?
-- **Supervisión remota de equipos**.
 - **Control de calidad automatizado** con algoritmos de análisis.
 - **Mantenimiento predictivo** con aprendizaje automático.
 
 ### Si no aplica a IT u OT, ¿cómo podrías adaptarlo para mejorar procesos tecnológicos concretos?
-Se podría adaptar para gestionar **infraestructura en la nube**, permitiendo optimizar despliegues y escalabilidad.
+Se podría adaptar para gestionar **infraestructura en la nube**, que pudiera manejar datos por si solo.
 
 ---
 
@@ -75,8 +74,8 @@ Se podría adaptar para gestionar **infraestructura en la nube**, permitiendo op
 
 ### ¿Qué tecnologías habilitadoras digitales (THD) has utilizado o podrías integrar en tu proyecto?
 - **Big Data** para procesamiento masivo de datos.
-- **Inteligencia Artificial** para análisis predictivo.
-- **Cloud Computing** para almacenamiento escalable.
+- **Inteligencia Artificial** para las respuestas a los prompts.
+- **Cloud Computing** para mantener la herramienta online.
 
 ### ¿Cómo mejoran estas tecnologías la funcionalidad o el alcance de tu software?
 - Permiten una **mayor escalabilidad**.
@@ -84,5 +83,5 @@ Se podría adaptar para gestionar **infraestructura en la nube**, permitiendo op
 - Facilitan la **integración con otros sistemas**.
 
 ### Si no has utilizado THD, ¿cómo podrías implementarlas para enriquecer tu solución?
-Podría incorporar **Machine Learning** para mejorar la toma de decisiones y personalización de servicios.
+Podría mejorar el uso que ya hago de **Machine Learning** para mejorar la toma de decisiones y personalización de servicios.
 
